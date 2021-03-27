@@ -1,1 +1,7 @@
-export class UniqueUsername {}
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({providedIn: 'root'})
+export class UniqueUsername {
+    constructor(private http: HttpClient) {}
+}
