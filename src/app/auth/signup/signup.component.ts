@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^[a-z0-9]+$/)
-    ]),
+    ], [this.uniqueUserName.validate]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
