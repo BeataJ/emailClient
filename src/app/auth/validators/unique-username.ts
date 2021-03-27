@@ -6,10 +6,10 @@ import { AsyncValidator, FormControl } from '@angular/forms';
 export class UniqueUsername implements AsyncValidator{
     constructor(private http: HttpClient) {}
 
-    validate(control: FormControl) { 
+    validate = (control: FormControl) => { 
         const { value } = control;
 
-        console.log(value);
+        console.log(this.http);
 
         return null;
     }
