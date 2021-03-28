@@ -15,8 +15,9 @@ export class UniqueUsername implements AsyncValidator{
         })
         .pipe(
             map(value => {
-                console.log(value);
-                return null;
+                if(value.available){
+                    return null;
+                }
             })
         )
     }
