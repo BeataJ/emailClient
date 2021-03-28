@@ -13,6 +13,11 @@ export class UniqueUsername implements AsyncValidator{
         return this.http.post<any>('https://api.angular-email.com/auth/username', {
            username: value 
         })
-       
+        .pipe(
+            map(value => {
+                console.log(value);
+                return null;
+            })
+        )
     }
 }
