@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  usernameAvailable(username: string) {
+    return this.http.post<any>('https://api.angular-email.com/auth/username', {
+      username
+    })
+  }
 }
