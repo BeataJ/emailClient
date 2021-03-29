@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   usernameAvailable(username: string) {
-    return this.http.post<{ available: true }>('https://api.angular-email.com/auth/username', {
+    return this.http.post<{ available:boolean }>('https://api.angular-email.com/auth/username', {
       username
     })
   }
