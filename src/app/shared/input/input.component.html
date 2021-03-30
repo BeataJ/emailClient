@@ -19,5 +19,8 @@
             {{ control.errors.maxlength.requiredLength }}
             characters
         </p>
+        <p *ngIf="control.errors.pattern">
+            Invalid Format
+        </p>
     </div>
 </div>
