@@ -23,5 +23,8 @@
             Invalid Format
         </p>
         <p *ngIf="control.errors.nonUniqueUsername">Username is taken</p>
+        <p *ngIf="control.errors.noConnection">
+            Can't tell if username is taken
+        </p>
     </div>
 </div>
