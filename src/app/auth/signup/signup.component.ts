@@ -46,7 +46,9 @@ export class SignupComponent implements OnInit {
         // Navigate to some other route
       },
       error: (err) => {
-        console.log(err)
+        if(!err.status) {
+          this.authForm.setErrors({ noConnection: true})
+        }
       }
     })
   }
