@@ -41,8 +41,13 @@ export class SignupComponent implements OnInit {
     }
 
    this.authService.signup(this.authForm.value)
-    .subscribe((response) => {
-      console.log(response);
+    .subscribe({
+      next: (response) => {
+        // Navigate to some other route
+      },
+      error: (err) => {
+        console.log(err)
+      }
     })
   }
 
