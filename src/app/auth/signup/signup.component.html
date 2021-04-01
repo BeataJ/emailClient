@@ -12,7 +12,11 @@
         <p *ngIf="authForm.errors.noConnection">
             No internet connection detected, failed to sign up
         </p>
+        <p *ngIf="authForm.errors.unkownError">
+            Failed to sign up
+        </p>
     </div>
 
     <div><button class="ui submit button primary">Submit</button></div>
+    <!-- {{ authForm.errors | json }} -->
 </form>
