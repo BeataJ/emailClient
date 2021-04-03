@@ -20,7 +20,8 @@ interface SignupResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  rootUrl = 'https://api.angular-email.com'
+  rootUrl = 'https://api.angular-email.com';
+  signedin = new BehaviorSubject(false);
 
   constructor(private http: HttpClient) { }
 
