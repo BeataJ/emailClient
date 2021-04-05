@@ -15,4 +15,7 @@ export class AppComponent {
     this.signedin$ = this.authService.signedin$;
   }
 
+  ngOnInit() {
+    this.authService.checkAuth().subscribe();
+  }
 }
