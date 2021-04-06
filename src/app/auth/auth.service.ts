@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, pipe } from 'rxjs';
 import { tap } from 'rxjs/operators'
 
 interface UsernameAvailableResponse {
@@ -57,6 +57,11 @@ export class AuthService {
 
   signout = () => {
     return this.http.post(`${this.rootUrl}/auth/signout`, {})
+      .pipe(
+        tap(() => {
+          this.signedin$.next(false)
+        })
+      )
   }
   
 }
