@@ -47,12 +47,16 @@ export class AuthService {
   }
 
   checkAuth = () => {
-    return this.http.get<>(`${this.rootUrl}/auth/signedin`)
+    return this.http.get<SignedinResponse>(`${this.rootUrl}/auth/signedin`)
      .pipe(
        tap(({ authenticated })=> {
-         console.log(response)
+         this.signedin$.next(authenticated);
        })
      )
+  }
+
+  signout = () => {
+    return this.http.post(`${this.rootUrl}/auth/signout`, {})
   }
   
 }
