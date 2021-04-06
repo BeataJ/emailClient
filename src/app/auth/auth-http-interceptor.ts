@@ -11,11 +11,11 @@ export class AuthHttpInterceptor implements HttpInterceptor{
         });
         
         return next.handle(modifiedReq)
-            .pipe(
-                filter(val => val.type === HttpEventType.Sent),
-                tap(val => {
-                    console.log('sent the request')
-                })
-            )
+            // .pipe(
+            //     filter(val => val.type === HttpEventType.Sent),
+            //     tap(val => {
+            //         console.log('sent the request')
+            //     })
+            // )
     }
 }
