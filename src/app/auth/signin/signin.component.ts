@@ -34,6 +34,7 @@ export class SigninComponent implements OnInit {
       return
     }
 
+    this.authService.signin(this.authForm.value)
 
   }
 
