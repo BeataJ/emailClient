@@ -28,8 +28,10 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit = () => [
-    
-  ]
+  onSubmit = () => {
+    if(this.authForm.invalid) {
+      return
+    }
+  }
 
 }
