@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatchPassword } from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 
@@ -28,31 +29,35 @@ export class SignupComponent implements OnInit {
       Validators.minLength(4),
       Validators.maxLength(20)
     ])
-  }, {validators: [this.matchPassword.validate] })
+  }, { validators: [this.matchPassword.validate] })
 
-  constructor(private matchPassword: MatchPassword, private uniqueUserName: UniqueUsername, private authService: AuthService  ) { }
+  constructor(
+    private matchPassword: MatchPassword,
+    private uniqueUserName: UniqueUsername, 
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit = () => {
-    if(this.authForm.invalid) {
+    if (this.authForm.invalid) {
       return;
     }
 
-   this.authService.signup(this.authForm.value)
-    .subscribe({
-      next: (response) => {
-        // Navigate to some other route
-      },
-      error: (err) => {
-        if(!err.status) {
-          this.authForm.setErrors({ noConnection: true})
-        } else {
-          this.authForm.setErrors({ unknownError: true })
+    this.authService.signup(this.authForm.value)
+      .subscribe({
+        next: () => {
+          this.router.navigateByUrl('/inbox')
+        },
+        error: (err) => {
+          if (!err.status) {
+            this.authForm.setErrors({ noConnection: true })
+          } else {
+            this.authForm.setErrors({ unknownError: true })
+          }
         }
-      }
-    })
+      })
   }
 
 }
