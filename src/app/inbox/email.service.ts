@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailService {
+  rootUrl = 'https://api.angular-email.com'
 
   constructor(private http: HttpClient) { }
 }
