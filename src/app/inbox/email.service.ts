@@ -16,6 +16,6 @@ export class EmailService {
   constructor(private http: HttpClient) { }
 
   getEmails = () => {
-    return this.http.get<EmailSummary>(`${this.rootUrl}/emails`)
+    return this.http.get<EmailSummary[]>(`${this.rootUrl}/emails`)
   }
 }
