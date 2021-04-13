@@ -11,6 +11,8 @@ export class EmailIndexComponent implements OnInit {
   constructor(private emailSwrvice: EmailService) { }
 
   ngOnInit(): void {
+    this.emailSwrvice.getEmails()
+      .subscribe(() => {})
   }
 
 }
