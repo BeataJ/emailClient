@@ -18,4 +18,8 @@ export class EmailService {
   getEmails = () => {
     return this.http.get<EmailSummary[]>(`${this.rootUrl}/emails`)
   }
+
+  getEmail = (id: string) => {
+    return this.http.get(`${this.rootUrl}/emails/${id}`)
+  }
 }
