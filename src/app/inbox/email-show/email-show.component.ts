@@ -13,11 +13,11 @@ export class EmailShowComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.route);
 
-    // this.route.params.subscribe((value) => {
-    //   console.log(value)
-    // })
+    this.route.params.subscribe((value) => {
+      console.log(value)
+    })
 
-    console.log(this.route.snapshot.params.id)
+    // console.log(this.route.snapshot.params.id)
   }
-
+ 
 }
