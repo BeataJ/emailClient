@@ -28,6 +28,6 @@ export class EmailService {
   }
 
   getEmail = (id: string) => {
-    return this.http.get(`${this.rootUrl}/emails/${id}`)
+    return this.http.get<Email>(`${this.rootUrl}/emails/${id}`)
   }
 }
