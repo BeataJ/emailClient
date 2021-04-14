@@ -7,6 +7,14 @@ interface EmailSummary {
   from: string;
 }
 
+interface Email {
+  id: string;
+  subject: string;
+  text: string;
+  to: string;
+  from: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
