@@ -9,13 +9,16 @@ import { EmailService } from '../email.service';
 })
 export class EmailShowComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private emailService: EmailService) { }
 
   ngOnInit(): void {
-    console.log(this.route);
-
-    this.route.params.subscribe((value) => {
-      console.log(value)
+    // console.log(this.route);
+    
+    this.route.params.subscribe(({ id }) => {
+      this.emailService.getEmail(id).subscribe(email => {
+        console.log(email);
+      })
+     
     })
 
     // console.log(this.route.snapshot.params.id)
