@@ -21,7 +21,7 @@ export class EmailShowComponent implements OnInit {
         return this.emailService.getEmail(id);
       })
     ).subscribe(email => {
-      console.log(email);
+      this.email = email
     })
 
   }
