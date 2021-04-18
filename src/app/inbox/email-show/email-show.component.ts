@@ -26,7 +26,9 @@ export class EmailShowComponent implements OnInit {
       switchMap(({ id }) => {
         return this.emailService.getEmail(id);
       })
-    )
+    ).subscribe(email => {
+      console.log(email);
+    })
 
     // console.log(this.route.snapshot.params.id)
   }
