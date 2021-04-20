@@ -7,12 +7,18 @@ import { EmailResolverService } from './email-resolver.service';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: HomeComponent,
     children: [
-      { path: ':id', component: EmailShowComponent},
-      {path:'', component: PlaceholderComponent},
-      
+      {
+        path: ':id',
+        component: EmailShowComponent,
+        resolve: {
+          email: EmailResolverService
+        }
+      },
+      { path: '', component: PlaceholderComponent },
+
     ]
   }
 ];
