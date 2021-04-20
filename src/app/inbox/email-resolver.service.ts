@@ -10,6 +10,12 @@ export class EmailResolverService implements Resolve<Email>{
   constructor() { }
 
   resolve() {
-
+    return {
+      id: 'wwwwwww',
+      subject: 'aamdmkdmmv',
+      to: 'sjjnjhghgih',
+      from: 'ffgjgjgajoa',
+      text: 'mbjgdrhdrh'
+    }
   }
 }
