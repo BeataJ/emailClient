@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Email } from './email';
 
 @Injectable({
@@ -9,7 +9,9 @@ export class EmailResolverService implements Resolve<Email>{
 
   constructor() { }
 
-  resolve() {
+  resolve(route: ActivatedRouteSnapshot) {
+    const { id } = route.params;
+
     return {
       id: 'wwwwwww',
       subject: 'aamdmkdmmv',
