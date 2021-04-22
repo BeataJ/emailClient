@@ -2,4 +2,4 @@
     Compose
 </button>
 
-<app-modal *ngIf="showModal"></app-modal>
+<app-modal (dismiss)="showModal = false"  *ngIf="showModal"></app-modal>
