@@ -16,7 +16,7 @@ export class EmailCreateComponent implements OnInit {
       to: '',
       subject: '',
       text: '',
-      from: ''
+      from: 'beata@angular-email.com'
     }
    }
 
