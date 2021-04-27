@@ -30,7 +30,7 @@ export class EmailFormComponent implements OnInit {
       return;
     }
 
-    console.log(this.emailForm.value)
+    this.emailSubmit.emit(this.emailForm.value);
   }
 
 }
