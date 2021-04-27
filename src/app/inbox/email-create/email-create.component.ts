@@ -24,4 +24,8 @@ export class EmailCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(email: Email) {
+
+  }
+
 }
