@@ -14,10 +14,14 @@ export class EmailReplyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    const text = this.email.text.replace(/\n/gi, '\n> ');
+
     this.email = {
       ...this.email,
       from: this.email.to,
-      to: this.email.from
+      to: this.email.from,
+      subject: `RE: ${this.email.subject}`,
+      text: `\n\n\n------ ${this.email.from} wrote: \n> ${text}`
     }
   }
 
