@@ -14,6 +14,11 @@ export class EmailReplyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.email = {
+      ...this.email,
+      from: this.email.to,
+      to: this.email.from
+    }
   }
 
   onSubmit(email: Email) {
