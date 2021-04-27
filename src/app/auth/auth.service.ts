@@ -47,8 +47,9 @@ export class AuthService {
   signup = (credentials: SignupCredentials) => {
     return this.http.post<SignupResponse>(`${this.rootUrl}/auth/signup`, credentials)
      .pipe(
-       tap(() => {
-         this.signedin$.next(true)
+       tap(({ username }) => {
+         this.signedin$.next(true);
+         this.username = username;
        })
      )
   }
